@@ -30,11 +30,11 @@ window.addEventListener('DOMContentLoaded', function(){
     type: 'bar',
     data: {
       // グラフのx軸
-      labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+      labels: gon.labels,
       datasets: [{
         // グラフにホバーした際に表示
         label: 'score',
-        data: [12, 19, 3, 5, 2, 3],
+        data: gon.scores,
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
           'rgba(54, 162, 235, 0.2)',
