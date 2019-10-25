@@ -15,3 +15,45 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+
+// HTMLが読み込まれた後にJavascriptが適用されるための記述
+window.addEventListener('DOMContentLoaded', function(){
+
+  /*
+  getElementByIdというメソッド（操作）を使って、HTML文書内でmyChartというID名を指定した要素を参照。
+  getContextメソッドはキャンバスにアクセうするためのもの。引数2dは、平面図形を描く際に指定。
+  */
+  var ctx = document.getElementById("myChart").getContext('2d');
+  // chart.jsの記述
+  var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      // グラフのx軸
+      labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+      datasets: [{
+        // グラフにホバーした際に表示
+        label: 'score',
+        data: [12, 19, 3, 5, 2, 3],
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)'
+        ],
+        borderWidth: 1
+      }]
+    }
+  });
+
+});
