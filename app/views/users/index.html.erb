@@ -5,13 +5,13 @@
 getElementByIdというメソッド（操作）を使って、HTML文書内でmyChartというID名を指定した要素を参照。
 getContextメソッドはキャンバスにアクセうするためのもの。引数2dは、平面図形を描く際に指定。
 */
-var ctx = document.getElementById("myChart").getContext('2d')
+var ctx = document.getElementById("myChart").getContext('2d');
 // chart.jsの記述
 var myChart = new Chart(ctx, {
-  type: 'bar'
+  type: 'bar',
   data: {
     // グラフのx軸
-    labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"]
+    labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
     datasets: [{
       // グラフにホバーした際に表示
       label: 'score',
